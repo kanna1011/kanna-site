@@ -15,6 +15,7 @@ const ContactForm: React.FC = () => {
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [comment, setComment] = useState('');
+    const [isSubmitted, setIsSubmitted] = useState(false);
 
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
@@ -30,6 +31,10 @@ const ContactForm: React.FC = () => {
           
           if (response.ok) {
             console.log("Email sent successfully.");
+            setIsSubmitted(true);
+            setTimeout(() => {
+                setIsSubmitted(false);
+            }, 5000);
           } else {
             console.log("Error sending email.");
           }
@@ -81,6 +86,11 @@ const ContactForm: React.FC = () => {
                     送信
                 </Button>
             </form>
+            {isSubmitted && (
+                <div style={{ position: 'fixed', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', background: '#FFC6A7', padding: '20px', borderRadius: '5px', boxShadow: '0px 0px 10px rgba(0,0,0,0.1)' }}>
+                    送信完了しました<br />
+                </div>
+            )}
         </ThemeProvider>
     );
 };

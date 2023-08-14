@@ -18,7 +18,7 @@ export const Works = () => {
         </Box>
         <Box sx={{ display: 'flex', flexDirection: { xs: 'column', md: 'row' }, justifyContent: 'center', mt: 5 }}>
             <WorkItem text='Kanna.site' imageUrl='./images/Kanna_site_samne.png' linkUrl='#'></WorkItem>
-            <WorkItem text='Github' imageUrl='./images/preparation_img.png' linkUrl='#'></WorkItem>
+            <WorkItem text='Github' imageUrl='./images/github_samne.png' linkUrl='https://github.com/kanna1011'></WorkItem>
         </Box>
     </Container>
   )
