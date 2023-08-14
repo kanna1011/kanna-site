@@ -1,14 +1,13 @@
-// use client
-"use client";
+
 import React, { useState } from 'react';
 import VisibilitySensor from 'react-visibility-sensor';
-import { About } from '../contents/About';
-import { Skills } from '../contents/Skills';
-import { Works } from '../contents/Works';
-import { Me } from '../contents/Me';
-import { Contact } from '../contents/Contact';
-import ScrollButton from '../utils/ScrollButton';
-import ScrollTopButton from '../utils/ScrollTopButton';
+import { About } from './contents/About';
+import { Skills } from './contents/Skills';
+import { Works } from './contents/Works';
+import { Me } from './contents/Me';
+import { Contact } from './contents/Contact';
+import ScrollButton from './utils/ScrollButton';
+import ScrollTopButton from './utils/ScrollTopButton';
 
 function HomePage() {
   return (

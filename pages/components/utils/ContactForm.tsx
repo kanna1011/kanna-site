@@ -16,12 +16,13 @@ const ContactForm: React.FC = () => {
     const [email, setEmail] = useState('');
     const [comment, setComment] = useState('');
 
-    const handleSubmit = async (e: React.FormEvent) => {
+    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         try {
-          const response = await fetch('/sendEmail', {
+          const response = await fetch('api/contact', {
             method: 'POST',
             headers: {
+              Accept: 'application/json, text/plain',
               'Content-Type': 'application/json',
             },
             body: JSON.stringify({ name, email, comment }),
@@ -39,7 +40,7 @@ const ContactForm: React.FC = () => {
 
     return (
         <ThemeProvider theme={theme}>
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={(e: React.FormEvent<HTMLFormElement>) => handleSubmit(e)}>
                 <Box mb={2}>
                     <TextField
                         fullWidth
